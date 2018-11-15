@@ -1,0 +1,14 @@
+{
+  "name": "scholarshipapplication",
+  "version": "1.0.0",
+  "description": "scholarship application to a non-profit organization project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Forero, Arne Thomsen, Joyce Miller, Andrew Wittman",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
