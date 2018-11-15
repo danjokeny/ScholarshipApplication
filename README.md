@@ -11,3 +11,7 @@ Confirm you can update this file, and commit, and push to server
 NodeSetup:
 1. npm init
 2. npm install express --save
+3. npm install nodemone --save
+4. npm install morgan winston --save
+5. npm install grunt --save
+
