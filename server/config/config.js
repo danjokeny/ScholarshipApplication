@@ -7,9 +7,9 @@ var path = require('path'),
 var config = {  
        development: {    
                    root: rootPath,    
-                   app: {      name: 'ToDo'    },    
-                   port: 3300,  
-                   db: 'mongodb://127.0.0.1/todo'
+                   app: {      name: 'Users'    },    
+                   port: 3300 //,  
+                  // db: 'mongodb://127.0.0.1/todo'
 
          }};
 

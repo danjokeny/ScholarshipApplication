@@ -5,11 +5,14 @@ var express = require('express');
 var morgan = require('morgan');
 var logger = require('./logger');
 var bodyParser = require('body-parser');
+var glob = require('glob');
+
 //var mongoose = require('mongoose');
 //var bluebird = require('bluebird');
-//var glob = require('glob');
+
 
 module.exports = function (app, config) {
+  logger.log('info', 'in config/express.js file! ');
 
   app.use(function (req, res, next) {
     logger.log('info', 'Request from ' + req.connection.remoteAddress);
@@ -28,6 +31,10 @@ module.exports = function (app, config) {
 
   app.use(express.static(config.root + '/public'));
 
+  var controllers = glob.sync(config.root + '/app/controllers/*.js');
+  controllers.forEach(function (controller) {
+    require(controller)(app, config);
+  });
 
 
   app.use(function (req, res) {
