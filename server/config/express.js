@@ -7,9 +7,8 @@ var logger = require('./logger');
 var bodyParser = require('body-parser');
 var glob = require('glob');
 
-//var mongoose = require('mongoose');
-//var bluebird = require('bluebird');
-
+var mongoose = require('mongoose');
+var bluebird = require('bluebird');
 
 module.exports = function (app, config) {
   logger.log('info', 'in config/express.js file! ');
@@ -21,13 +20,10 @@ module.exports = function (app, config) {
 
   app.use(morgan('dev'));
 
-
-  // app.use(bodyParser.json());
-  app.use(bodyParser.json());
+   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({
     extended: true
   }));
-
 
   app.use(express.static(config.root + '/public'));
 
@@ -35,7 +31,6 @@ module.exports = function (app, config) {
   controllers.forEach(function (controller) {
     require(controller)(app, config);
   });
-
 
   app.use(function (req, res) {
     logger.log('error', 'File not found');

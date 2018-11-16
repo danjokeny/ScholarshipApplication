@@ -35,6 +35,9 @@ NodeSetup:
 
 
 Change#2
-Name:
-Date:
-Detail changes:
+Name: Andy
+Date: 11/16/18
+Detail changes: install mongoose
+1. npm install mongoose bluebird --save
+2. added db connections
+3. changed app name form users to ScholarshipApplication
