@@ -8,6 +8,7 @@ var express = require('express'),
 
 module.exports = function (app, config) {
     app.use('/api', router);
+    logger.log('info', 'in forms.js file!');
 
     router.get('/forms', asyncHandler(async (req, res) => {
         logger.log('info', 'Get all forms');
