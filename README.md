@@ -19,11 +19,11 @@ Daniel Forero
 NodeSetup:
 1. created server folder
 2. npm init
-2. npm install express --save
-3. npm install nodemone --save
-4. npm install morgan winston --save
-5. npm install grunt --save
-6. created .gitignore file
+3. npm install express --save
+4. npm install nodemone --save
+5. npm install morgan winston --save
+6. npm install grunt --save
+7. created .gitignore file
 
 
 #2
