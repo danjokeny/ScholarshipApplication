@@ -20,7 +20,7 @@ NodeSetup:
 1. created server folder
 2. npm init
 3. npm install express --save
-4. npm install nodemone --save
+4. npm install nodemon --save
 5. npm install morgan winston --save
 6. npm install grunt --save
 7. created .gitignore file
