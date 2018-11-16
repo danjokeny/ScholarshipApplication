@@ -31,6 +31,7 @@ NodeSetup:
 12.  added logger,config, express, Gruntfile, and index.js files
 13.  added users.js file in controllers 
 14.  Server successfully listening on port 3300
+15.  PUT and GET(ALL) routes tested and working (console.log only -- no database)
 
 
 Change#2
