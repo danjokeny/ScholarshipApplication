@@ -41,3 +41,6 @@ Detail changes: install mongoose
 1. npm install mongoose bluebird --save
 2. added db connections
 3. changed app name form users to ScholarshipApplication
+4. updated controller for users
+5. created controller for forms
+6. created schema models for forms and users - I made some assumptions, needs review
