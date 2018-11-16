@@ -28,6 +28,8 @@ NodeSetup:
 9. npm install express-async-handler --save
 10. npm install body-parser --save
 11. npm install grunt-cli -g and also --save
+12.  added logger,config, express, Gruntfile, and index.js files
+13.  added users.js file in controllers 
 
 
 Change#2
