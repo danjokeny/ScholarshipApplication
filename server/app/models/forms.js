@@ -22,7 +22,7 @@ var formSchema = new Schema({
     title: {type: String, require: true},
     requesterId: {type: Schema.Types.ObjectId, require: true},
     reviewerId: {type: Schema.Types.ObjectId, require: true},
-    status: {type: String, enum:['new', 'approved', 'denied']},
+    status: {type: String, enum:['new', 'approved', 'denied'], default: 'new'},
     dateCreated: {type: Date, default: Date.now}
 });
 

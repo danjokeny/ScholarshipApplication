@@ -4,7 +4,6 @@ var Schema = Mongoose.Schema;
 var userSchema = new Schema({
     firstName: {type: String, require: true},
     lastName: {type: String, require: true},
-    dateRegistered: {type: Date, require: true},
     active: {type: Boolean, require: true},
     role: {type: String, enum:['admin', 'requester', 'reviewer']},
     dateRegistered: {type: Date, default: Date.now},
