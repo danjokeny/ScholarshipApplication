@@ -11,7 +11,7 @@ Confirm you can update this file, and commit, and push to server
 
 Change Log:
 
-#1
+Change#1
 Daniel Forero
 11/15/2018
 
@@ -24,6 +24,13 @@ NodeSetup:
 5. npm install morgan winston --save
 6. npm install grunt --save
 7. created .gitignore file
+8. npm install grunt-contrib-nodemon -g and also --save
+9. npm install express-async-handler --save
+10. npm install body-parser --save
+11. npm install grunt-cli -g and also --save
 
 
-#2
+Change#2
+Name:
+Date:
+Detail changes:
