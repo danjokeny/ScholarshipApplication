@@ -8,6 +8,14 @@ Confirm you can update this file, and commit, and push to server
 3. Arne has not confirmed yet
 4. Andrew has not confirmed yet
 
+
+Change Log:
+
+#1
+Daniel Forero
+11/15/2018
+
+
 NodeSetup:
 1. npm init
 2. npm install express --save
@@ -15,3 +23,6 @@ NodeSetup:
 4. npm install morgan winston --save
 5. npm install grunt --save
 
+
+
+#2
