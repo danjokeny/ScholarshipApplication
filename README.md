@@ -56,3 +56,6 @@ Detail changes: Add DB calls to routes
 5. Get specific user request working
 6. Update specific user request working
 7. POST Forms db working
+8. added comments for GET ALL and GET Specific calls that were already working
+9. added comments for PUT update forms
+10.  do we need to delete application forms?  there is a delete coded.

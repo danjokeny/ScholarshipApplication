@@ -64,7 +64,17 @@ module.exports = function (app, config) {
     }));
 
 
-
+    //Update existing data row with json passed in raw body
+    //Sample:http://localhost:3300/api/users (PUT)
+    /*
+{
+    "status": "approved",
+    "_id": "5bf455ba5a8525255439b191",
+    "title": "University of Wisconsin - Milwaukee",
+    "requesterId": "5bf44183529ce230e821fad4",
+    "reviewerId": "5bf45a0581b9f87b78e63e68"
+}
+    */
     router.put('/forms', asyncHandler(async (req, res) => {
         logger.log('info', 'Updating form');
         await Form.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true })
@@ -73,6 +83,7 @@ module.exports = function (app, config) {
             })
     }));
 
+    //do we need delete?
     router.delete('/forms/:id', asyncHandler(async (req, res) => {
         logger.log('info', 'Deleting form %s', req.params.id);
         await Form.remove({ _id: req.params.id })
