@@ -44,3 +44,11 @@ Detail changes: install mongoose
 4. updated controller for users
 5. created controller for forms
 6. created schema models for forms and users - I made some assumptions, needs review
+
+Change#3
+Name: Danny Forero
+Date: 11/20/18
+Detail changes: Add DB calls to routes 
+1. removed node modules and package-lock.json from parent directory
+2. added db promise
+3. POST db insert working (tested for dupe/enum errors too)

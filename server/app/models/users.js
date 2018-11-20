@@ -10,7 +10,6 @@ var userSchema = new Schema({
     email: {type: String, require: true, unique: true},
     phone: {type: String, require: true},
     password: {type: String, require: true}
-
 });
 
 module.exports = 

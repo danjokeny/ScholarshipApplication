@@ -15,11 +15,26 @@ module.exports = function (app, config) {
     //API call routes below
     logger.log('info', 'using /api route!!');
     
-    //POST Create new user  API request -- -- console log only
+
+    //create new user api Post request with json passed in raw body
     //Sample: http://localhost:3300/api/users (PUT)
+    /*{
+        "firstName" : "Amy",    
+        "lastName"  : "Vankauwenberg",   
+        "active"    : "True" ,
+        "role"      : "requester",
+        "email"     : "AmyV@nm.com",   
+        "password"  : "987654321",
+        "phone"     : "555-555-1000"
+    }*/
     router.post('/users', asyncHandler(async (req, res) => {
         logger.log('info', 'POST Create new user Async Request');
-        res.status(200).json({message:'Created a new user!'});
+        var user = new User(req.body);
+        console.log(req.body);
+        await user.save()
+        .then(result => {
+                res.status(201).json(result);
+        })
     }));
 
 
