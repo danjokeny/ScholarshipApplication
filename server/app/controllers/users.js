@@ -45,8 +45,18 @@ module.exports = function (app, config) {
         let query = User.find();
         query.sort(req.query.order)
         await query.exec().then(result => {
-            logger.log('info',result)
-                res.status(200).json(result);
+            logger.log('info',result);
+            res.status(200).json(result);
+        })
+    }));
+
+    //Get specific User id Request 
+    //Sample: http://localhost:3300/api/users/5bf441ff529ce230e821fad6,
+    router.get('/users/:id', asyncHandler(async (req, res) => {
+        logger.log('info', 'Get specific user by id =  %s', req.params.id);
+        await User.findById(req.params.id).then(result => {
+            logger.log('info', 'getbyID user = ' + result);
+            res.status(200).json(result);
         })
     }));
 
