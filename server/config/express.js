@@ -11,8 +11,6 @@ var mongoose = require('mongoose');
 var bluebird = require('bluebird');
 
 module.exports = function (app, config) {
-  logger.log('info', 'in config/express.js file! ');
-
   logger.log('info', "Loading Mongoose functionality");
   mongoose.Promise = bluebird;
   mongoose.connect(config.db);

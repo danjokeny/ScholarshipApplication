@@ -9,7 +9,7 @@ mongoose = require('mongoose'),
 User = mongoose.model('User');
 
 module.exports = function (app, config) {
-    logger.log('info', 'in users.js file!');
+
     app.use('/api', router);
 
     //API call routes below
@@ -17,7 +17,7 @@ module.exports = function (app, config) {
     
 
     //create new user api Post request with json passed in raw body
-    //Sample: http://localhost:3300/api/users (PUT)
+    //Sample: http://localhost:3300/api/users (POST)
     /*{
         "firstName" : "Amy",    
         "lastName"  : "Vankauwenberg",   

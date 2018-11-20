@@ -1,14 +1,34 @@
 var express = require('express'),
     router = express.Router(),
     logger = require('../../config/logger'),
-    mongoose = require('mongoose'),
-    Form = mongoose.model('Form'),
-    FormContent = mongoose.model('FormContent'),
     asyncHandler = require('express-async-handler');
+
+mongoose = require('mongoose'),
+Form = mongoose.model('Form');
+FormContent = mongoose.model('FormContent'),
 
 module.exports = function (app, config) {
     app.use('/api', router);
-    logger.log('info', 'in forms.js file!');
+
+    //create new forms api Post request with json passed in raw body
+    //NOTE: requestorId and reviewerID must be valid users in user db
+    //Sample: http://localhost:3300/api/forms (POST)
+    /*{
+        "title" : "Application for UWM",    
+        "requesterId"  : "5bf440c2529ce230e821fad1",   
+        "reviewerId"    : "5bf441ff529ce230e821fad6" ,
+        "status"      : "new"
+    }*/
+    router.post('/forms', asyncHandler(async (req, res) => {
+        logger.log('info', 'POST Create new application form');
+        var form = new Form(req.body);
+        console.log(req.body);
+        await form.save()
+        .then(result => {
+                res.status(201).json(result);
+        })
+    }));
+
 
     router.get('/forms', asyncHandler(async (req, res) => {
         logger.log('info', 'Get all forms');
@@ -37,12 +57,7 @@ module.exports = function (app, config) {
         })
     }));
 
-    router.post('/forms', asyncHandler(async (req, res) => {
-        logger.log('info', 'Creating form');
-        var Form = new Form(req.body);
-        const result = await Form.save()
-        res.status(201).json(result);
-    }));
+
 
     router.put('/forms', asyncHandler(async (req, res) => {
         logger.log('info', 'Updating form');
