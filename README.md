@@ -6,7 +6,7 @@ Confirm you can update this file, and commit, and push to server
 1. Danny is confirmed
 2. Joyce has not confirmed yet
 3. Arne has not confirmed yet
-4. Andrew has not confirmed yet
+4. Andrew is confirmed
 
 
 Change Log:
@@ -35,6 +35,12 @@ NodeSetup:
 
 
 Change#2
-Name:
-Date:
-Detail changes:
+Name: Andy
+Date: 11/16/18
+Detail changes: install mongoose
+1. npm install mongoose bluebird --save
+2. added db connections
+3. changed app name form users to ScholarshipApplication
+4. updated controller for users
+5. created controller for forms
+6. created schema models for forms and users - I made some assumptions, needs review

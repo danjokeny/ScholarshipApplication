@@ -5,8 +5,8 @@ var express = require('express'),
     logger = require('../../config/logger'),
     asyncHandler = require('express-async-handler');
 
-//mongoose = require('mongoose'),
-//Users = mongoose.model('Users');
+mongoose = require('mongoose'),
+User = mongoose.model('User');
 
 module.exports = function (app, config) {
     logger.log('info', 'in users.js file!');
