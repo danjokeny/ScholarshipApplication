@@ -38,11 +38,16 @@ module.exports = function (app, config) {
     }));
 
 
-    //Get All Users API request -- -- console log only
+    //Get All Users API request 
     //Sample: http://localhost:3300/api/users (GET)
     router.get('/users', asyncHandler(async (req, res) => {
         logger.log('info', 'Get ALL Users Async Request');
-        res.status(200).json({message:'Got All Users'});
+        let query = User.find();
+        query.sort(req.query.order)
+        await query.exec().then(result => {
+            logger.log('info',result)
+                res.status(200).json(result);
+        })
     }));
 
 };

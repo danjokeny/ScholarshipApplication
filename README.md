@@ -52,3 +52,4 @@ Detail changes: Add DB calls to routes
 1. removed node modules and package-lock.json from parent directory
 2. added db promise
 3. POST db insert working (tested for dupe/enum errors too)
+4. GET (ALL) db request working
