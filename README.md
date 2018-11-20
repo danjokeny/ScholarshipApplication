@@ -53,3 +53,5 @@ Detail changes: Add DB calls to routes
 2. added db promise
 3. POST db insert working (tested for dupe/enum errors too)
 4. GET (ALL) db request working
+5. Get specific user request working
+6. Update specific user request working

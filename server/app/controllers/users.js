@@ -60,4 +60,27 @@ module.exports = function (app, config) {
         })
     }));
 
+    //Update existing data row with json passed in raw body
+    //Sample:http://localhost:3300/api/users (PUT)
+    /*
+    {
+    "_id": "5bf440c2529ce230e821fad1",
+    "firstName": "Amy",
+    "lastName": "Vankauwenberg",
+    "active": false,
+    "role": "requester",
+    "email": "AmyV@nm.com",
+    "password": "555666777",
+    "phone": "914-814-5555"
+    }
+*/
+    router.put('/users', asyncHandler(async (req, res) => {
+        logger.log('info', 'Updating user');
+        await User.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true })
+            .then(result => {
+                logger.log('info', 'update user = ' + result);
+                res.status(200).json(result);
+        })
+    }));
+
 };
