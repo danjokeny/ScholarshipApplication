@@ -15,10 +15,10 @@ module.exports = function (app, config) {
     //API call routes below
     logger.log('info', 'using /api route!!');
     
-    //PUT Create new user  API request -- -- console log only
+    //POST Create new user  API request -- -- console log only
     //Sample: http://localhost:3300/api/users (PUT)
-    router.put('/users', asyncHandler(async (req, res) => {
-        logger.log('info', 'PUT Create new user Async Request');
+    router.post('/users', asyncHandler(async (req, res) => {
+        logger.log('info', 'POST Create new user Async Request');
         res.status(200).json({message:'Created a new user!'});
     }));
 

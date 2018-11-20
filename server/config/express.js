@@ -13,6 +13,14 @@ var bluebird = require('bluebird');
 module.exports = function (app, config) {
   logger.log('info', 'in config/express.js file! ');
 
+  logger.log('info', "Loading Mongoose functionality");
+  mongoose.Promise = bluebird;
+  mongoose.connect(config.db);
+  var db = mongoose.connection;
+  db.on('error', function () {
+    throw new Error('unable to connect to database at ' + config.db);
+  });
+
   app.use(function (req, res, next) {
     logger.log('info', 'Request from ' + req.connection.remoteAddress);
     next();
