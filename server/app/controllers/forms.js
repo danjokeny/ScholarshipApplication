@@ -30,6 +30,9 @@ module.exports = function (app, config) {
     }));
 
 
+    //get all forms 
+    //NOTE: requestorId and reviewerID will display user records within form
+    //Sample: http://localhost:3300/api/forms (GET)
     router.get('/forms', asyncHandler(async (req, res) => {
         logger.log('info', 'Get all forms');
         let query = Form.find();
@@ -50,6 +53,9 @@ module.exports = function (app, config) {
         })
     }));
 
+    //get specific forms 
+    //NOTE: requestorId and reviewerID will NOT display user records within form
+    //Sample: http://localhost:3300/api/forms/5bf455ba5a8525255439b191 (GET)
     router.get('/forms/:id', asyncHandler(async (req, res) => {
         logger.log('info', 'Get form %s', req.params.id);
         await Form.findById(req.params.id).then(result => {
