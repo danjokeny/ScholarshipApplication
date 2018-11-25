@@ -63,4 +63,10 @@ Detail changes: Add DB calls to routes
 Change#4
 Name: Joyce Miller
 Date: 11/25/18
-Detail changes: download and clone
+Detail changes: 
+1. Installed client
+2. Set up routing
+3. Added layer for users
+4. Added phone field and set default role to requester
+5. Set data-services port to 3300 to match server
+6. Created a user and verified in Compass

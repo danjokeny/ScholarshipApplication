@@ -6,6 +6,7 @@ var morgan = require('morgan');
 var logger = require('./logger');
 var bodyParser = require('body-parser');
 var glob = require('glob');
+var cors = require('cors');
 
 var mongoose = require('mongoose');
 var bluebird = require('bluebird');
@@ -18,6 +19,8 @@ module.exports = function (app, config) {
   db.on('error', function () {
     throw new Error('unable to connect to database at ' + config.db);
   });
+
+  app.use(cors({origin: 'http://localhost:9000'}));
 
   app.use(function (req, res, next) {
     logger.log('info', 'Request from ' + req.connection.remoteAddress);

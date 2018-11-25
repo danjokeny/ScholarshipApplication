@@ -1,4 +1,6 @@
 import environment from './environment';
+import regeneratorRuntime from 'regenerator-runtime';  // supports async-await
+window.regeneratorRuntime = regeneratorRuntime;        // supports async-await
 
 export function configure(aurelia) {
   aurelia.use
