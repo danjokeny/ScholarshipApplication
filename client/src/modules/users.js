@@ -12,6 +12,18 @@ export class Users {
     this.showUserEditForm = false;
   }
 
+  async activate() {
+    await this.getUsers();
+  }
+
+  attached() {
+    feather.replace()
+  }
+
+  async getUsers() {
+    await this.users.getUsers();
+  }
+
   newUser() {
     this.user = {
       firstName: "",
@@ -25,16 +37,42 @@ export class Users {
     this.showUserEditForm = true;
   }
 
+  openEditForm() {
+    this.showUserEditForm = true;
+    setTimeout(() => { $("#firstName").focus(); }, 500);
+  }
+
+  editUser(user) {
+    this.user = user;
+    this.openEditForm();
+  }
+
+  changeActive(user) {
+    this.user = user;
+    this.save();
+  }
+
   async save() {
     if (this.user && this.user.firstName && this.user.lastName
-      && this.user.email && this.user.password && this.user.phone){
+      && this.user.email && this.user.password && this.user.phone) {
       await this.users.saveUser(this.user);
+      await this.users.getUsers();
+      this.back();
     }
   }
 
 
-  // logout() {
-  //   this.router.navigate('home');
-  // }
+  back() {
+    this.showUserEditForm = false;
+  }
+
+  async delete() {
+    if (this.user) {
+      await this.users.delete(this.user);
+      await this.getUsers();
+      this.back();
+    }
+  }
+ 
 }
 
