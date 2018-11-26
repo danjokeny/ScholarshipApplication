@@ -72,4 +72,4 @@ Detail changes:
 6. Created a user and verified in Compass
 7. Created nav bar, users table, and cleaned up users form
 8. Verified that user creation is working from cleaned-up form
-9. Ran out of time - need to do final edits for delete and edit
+9. User functionality complete as defined in class
