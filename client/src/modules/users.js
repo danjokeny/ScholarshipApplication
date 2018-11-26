@@ -34,7 +34,7 @@ export class Users {
       phone: "",
       password: ""
     }
-    this.showUserEditForm = true;
+    this.openEditForm();
   }
 
   openEditForm() {
