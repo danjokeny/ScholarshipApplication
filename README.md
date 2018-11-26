@@ -73,3 +73,8 @@ Detail changes:
 7. Created nav bar, users table, and cleaned up users form
 8. Verified that user creation is working from cleaned-up form
 9. User functionality complete as defined in class
+
+Change#5
+Name: Andy Wittmann
+Date: 11/26/18
+Detail changes: updated forms.js schema

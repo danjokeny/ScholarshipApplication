@@ -45,5 +45,10 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-notify": "^3.2.0",
     "gulp-watch": "^5.0.1"
-  }
+  },
+  "main": ".babelrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": ""
 }
