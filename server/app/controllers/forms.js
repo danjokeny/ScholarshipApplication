@@ -5,7 +5,7 @@ var express = require('express'),
 
 mongoose = require('mongoose'),
 Form = mongoose.model('Form');
-FormContent = mongoose.model('FormContent'),
+//FormContent = mongoose.model('FormContent'),
 
 module.exports = function (app, config) {
     app.use('/api', router);
@@ -14,11 +14,17 @@ module.exports = function (app, config) {
     //NOTE: requestorId and reviewerID must be valid users in user db
     //Sample: http://localhost:3300/api/forms (POST)
     /*{
-        "title" : "Application for UWM",    
-        "requesterId"  : "5bf440c2529ce230e821fad1",   
-        "reviewerId"    : "5bf441ff529ce230e821fad6" ,
-        "status"      : "new"
-    }*/
+        "schoolName"			: "dartmouth",    
+        "reviewerId"			: "5bf440c2529ce230e821fad1",   
+        "requesterId"    		: "5bf441ff529ce230e821fad6" ,
+        "courseOfStudy" 		: "Comp sci",
+        "schoolYear"			: 1990,
+        "amountRequested"		: 60000,
+        "status"    			: "new",
+         "applicantComments"	: "",
+    	"reviewComments"		: ""
+	
+}*/
     router.post('/forms', asyncHandler(async (req, res) => {
         logger.log('info', 'POST Create new application form');
         var form = new Form(req.body);
