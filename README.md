@@ -78,3 +78,11 @@ Change#5
 Name: Andy Wittmann
 Date: 11/26/18
 Detail changes: updated forms.js schema
+
+
+Change #6
+Name: Danny Forero
+Date: 11/26/18
+Detail Changes:
+1. updated server routes to work with new forms schema
+2. added new route to get all forms by requestor id

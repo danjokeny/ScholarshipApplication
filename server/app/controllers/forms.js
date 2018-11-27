@@ -59,10 +59,22 @@ module.exports = function (app, config) {
         })
     }));
 
-    //get specific forms 
+    //get all forms for specific requestor id 
     //NOTE: requestorId and reviewerID will NOT display user records within form
-    //Sample: http://localhost:3300/api/forms/5bf455ba5a8525255439b191 (GET)
-    router.get('/forms/:id', asyncHandler(async (req, res) => {
+    //Sample: http://localhost:3300/api/forms/requesterId/5bf440c2529ce230e821fad1 (GET)
+    router.get('/forms/requesterId/:id', asyncHandler(async (req, res) => {
+        logger.log('info', 'Get form %s', req.params.id);
+        let query = Form.find();
+        query.where('requesterId').eq(req.params.id)
+        await query.exec().then(result => {
+            res.status(200).json(result);
+        })
+    }));
+
+    //get specific forms by form id (note this may not be needed)
+    //NOTE: requestorId and reviewerID will NOT display user records within form
+    //Sample: http://localhost:3300/api/forms/id/5bf455ba5a8525255439b191 (GET)
+    router.get('/forms/id/:id', asyncHandler(async (req, res) => {
         logger.log('info', 'Get form %s', req.params.id);
         await Form.findById(req.params.id).then(result => {
             res.status(200).json(result);
