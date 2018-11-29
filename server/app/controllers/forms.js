@@ -44,8 +44,8 @@ module.exports = function (app, config) {
         let query = Form.find();
         query
             .sort(req.query.order)
-                .populate({path: 'requesterId', model: 'User', select: 'lastName firstName fullName'} )
-                .populate({path: 'reviewerId', model: 'User', select: 'lastName firstName fullName'} );
+                .populate({path: 'requesterId', model: 'User', select: 'lastName firstName '} )
+                .populate({path: 'reviewerId', model: 'User', select: 'lastName firstName '} );
 
         if(req.query.status){
             if(req.query.status[0] == '-'){
@@ -59,27 +59,6 @@ module.exports = function (app, config) {
         })
     }));
 
-    //get all forms for specific requestor id 
-    //NOTE: requestorId and reviewerID will NOT display user records within form
-    //Sample: http://localhost:3300/api/forms/requesterId/5bf440c2529ce230e821fad1 (GET)
-    router.get('/forms/requesterId/:id', asyncHandler(async (req, res) => {
-        logger.log('info', 'Get form %s', req.params.id);
-        let query = Form.find();
-        query.where('requesterId').eq(req.params.id)
-        await query.exec().then(result => {
-            res.status(200).json(result);
-        })
-    }));
-
-    //get specific forms by form id (note this may not be needed)
-    //NOTE: requestorId and reviewerID will NOT display user records within form
-    //Sample: http://localhost:3300/api/forms/id/5bf455ba5a8525255439b191 (GET)
-    router.get('/forms/id/:id', asyncHandler(async (req, res) => {
-        logger.log('info', 'Get form %s', req.params.id);
-        await Form.findById(req.params.id).then(result => {
-            res.status(200).json(result);
-        })
-    }));
 
 
     //Update existing data row with json passed in raw body
@@ -101,13 +80,5 @@ module.exports = function (app, config) {
             })
     }));
 
-    //do we need delete?
-    router.delete('/forms/:id', asyncHandler(async (req, res) => {
-        logger.log('info', 'Deleting form %s', req.params.id);
-        await Form.remove({ _id: req.params.id })
-            .then(result => {
-                res.status(200).json(result);
-            })
-    }));
 
 };

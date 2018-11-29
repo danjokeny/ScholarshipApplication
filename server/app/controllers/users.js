@@ -6,7 +6,7 @@ var express = require('express'),
     asyncHandler = require('express-async-handler');
 
 mongoose = require('mongoose'),
-User = mongoose.model('User');
+    User = mongoose.model('User');
 
 module.exports = function (app, config) {
 
@@ -14,7 +14,7 @@ module.exports = function (app, config) {
 
     //API call routes below
     logger.log('info', 'using /api route!!');
-    
+
 
     //create new user api Post request with json passed in raw body
     //Sample: http://localhost:3300/api/users (POST)
@@ -32,9 +32,9 @@ module.exports = function (app, config) {
         var user = new User(req.body);
         console.log(req.body);
         await user.save()
-        .then(result => {
+            .then(result => {
                 res.status(201).json(result);
-        })
+            })
     }));
 
 
@@ -45,20 +45,38 @@ module.exports = function (app, config) {
         let query = User.find();
         query.sort(req.query.order)
         await query.exec().then(result => {
-            logger.log('info',result);
+            logger.log('info', result);
             res.status(200).json(result);
         })
     }));
 
-    //Get specific User id Request 
-    //Sample: http://localhost:3300/api/users/5bf441ff529ce230e821fad6,
-    router.get('/users/:id', asyncHandler(async (req, res) => {
-        logger.log('info', 'Get specific user by id =  %s', req.params.id);
-        await User.findById(req.params.id).then(result => {
-            logger.log('info', 'getbyID user = ' + result);
-            res.status(200).json(result);
+    //Get all forms for requester user by email
+    //Sample: http://localhost:3300/api/users/email/AmyV@nm.com
+    router.get('/users/email/:email', asyncHandler(async (req, res) => {
+        logger.log('info', 'Get all forms for requestor user by email =>%s<', req.params.email);
+        let inEmail = req.params.email;
+        logger.log('info', 'inEmail = ' + inEmail);
+
+        //get user by email
+        let query = User.findOne();
+        query.where('email').eq(inEmail);
+        query.select('firstName lastName email');
+
+        await query.exec().then(result => {
+            logger.log('info', 'get  email  = ' + result.email + ' and id =  ' + result._id);
+            let requestorId = result._id;
+            logger.log('info', 'let inside requestor  id =  ' + requestorId);
+            let query2 = Form.find();
+            query2.where('requesterId').eq(requestorId)
+            query2.exec().then(result2 => {
+                logger.log('info', 'get forms by requestor id = ' + result2);
+                res.status(200).json(result2);
+            });  
         })
     }));
+
+
+
 
     //Update existing data row with json passed in raw body
     //Sample:http://localhost:3300/api/users (PUT)
@@ -73,14 +91,14 @@ module.exports = function (app, config) {
     "password": "555666777",
     "phone": "914-814-5555"
     }
-*/
+    */
     router.put('/users', asyncHandler(async (req, res) => {
         logger.log('info', 'Updating user');
         await User.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true })
             .then(result => {
                 logger.log('info', 'update user = ' + result);
                 res.status(200).json(result);
-        })
+            })
     }));
 
 };
