@@ -86,3 +86,11 @@ Date: 11/26/18
 Detail Changes:
 1. updated server routes to work with new forms schema
 2. added new route to get all forms by requestor id
+
+
+Change #7
+Name: Danny Forero
+Date: 11/29/18
+Detail Changes:
+1. updated server routes to get all forms given a users email - finally!
+2. removed deletes and updates, since i dont think we wil be using these - will add back if needed
