@@ -94,3 +94,12 @@ Date: 11/29/18
 Detail Changes:
 1. updated server routes to get all forms given a users email - finally!
 2. removed deletes and updates, since i dont think we wil be using these - will add back if needed
+
+Change #8
+Name: Danny Forero
+Date: 11/30/18
+Detail Changes:
+1. added public folder under Client
+2. added two images in public folder (1 for landing page, and 1 for eventual logout page)
+3. added image1 to the landing page
+
