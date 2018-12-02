@@ -21,19 +21,12 @@ export class Form {
     }
 
 
-    async getUsers() {
-        let response = await this.data.get(this.USER_SERVICE);
+    async getForms() {
+        let response = await this.data.get(this.FORM_SERVICE);
         if (!response.error) {
-            this.usersArray = response;
+            this.formsArray = response;
         } else {
-            this.usersArray = [];
+            this.formsArray = [];
         }
     }
-
-    async delete(user) {
-        if (user && user._id) {
-            await this.data.delete(this.USER_SERVICE + '/' + user._id)
-        }
-    }
-
 }
