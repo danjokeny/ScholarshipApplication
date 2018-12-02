@@ -16,6 +16,11 @@ export class App {
         route: 'users',
         moduleId: './modules/users',
         name: 'Users'
+      },
+      {
+        route: 'forms',
+        moduleId: './modules/forms',
+        name: 'Forms'
       }
     ]);
   }

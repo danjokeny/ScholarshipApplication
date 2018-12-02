@@ -1,6 +1,6 @@
 import { inject } from 'aurelia-framework';
 import { Router } from 'aurelia-router';
-import { User } from '../resources/data/form-object'
+import { Form } from '../resources/data/form-object'
 
 
 @inject(Router, Form)
