@@ -3,10 +3,14 @@
 var express = require('express'),
     router = express.Router(),
     logger = require('../../config/logger'),
-    asyncHandler = require('express-async-handler');
+    asyncHandler = require('express-async-handler'),
+    mongoose = require('mongoose'),
+    User = mongoose.model('User'),
+    passportService = require('../../config/passport'),
+    passport = require('passport');
 
-mongoose = require('mongoose'),
-    User = mongoose.model('User');
+var requireLogin = passport.authenticate('local', { session: false });
+var requireAuth = passport.authenticate('jwt', { session: false });
 
 module.exports = function (app, config) {
 
@@ -71,7 +75,7 @@ module.exports = function (app, config) {
             query2.exec().then(result2 => {
                 logger.log('info', 'get forms by requestor id = ' + result2);
                 res.status(200).json(result2);
-            });  
+            });
         })
     }));
 
@@ -100,5 +104,30 @@ module.exports = function (app, config) {
                 res.status(200).json(result);
             })
     }));
+
+    //Route to update passwords (needed due to encryption)
+
+    router.put('/users/password/:userId', requireAuth, function (req, res, next) {
+        logger.log('Update user ' + req.params.userId, 'verbose');
+        User.findById(req.params.userId)
+            .exec()
+            .then(function (user) {
+                if (req.body.password !== undefined) {
+                    user.password = req.body.password;
+                }
+                user.save()
+                    .then(function (user) {
+                        res.status(200).json(user);
+                    })
+                    .catch(function (err) {
+                        return next(err);
+                    });
+            })
+            .catch(function (err) {
+                return next(err);
+            });
+    });
+
+    router.route('/users/login').post(requireLogin, login);
 
 };

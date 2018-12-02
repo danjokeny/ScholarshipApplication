@@ -103,7 +103,7 @@ Detail Changes:
 2. added two images in public folder (1 for landing page, and 1 for eventual logout page)
 3. added image1 to the landing page
 
-Change #9
+Change #9 - Application Form Basics
 Name: Arne Thomsen
 Date: 12/02/18
 Detail Changes:
@@ -114,3 +114,31 @@ Detail Changes:
 5. added editForm.html in /client/src/modules/components
 6. Update nav-bar.html for application link to '#forms'
 7. Added Forms route to app.js
+
+Change #10 - Authentication
+Name: Arne Thomsen
+Date: 12/02/18
+Detail Changes:
+1. Installed bcrypt and added it to server user model
+2. Updated route in users.js controller to add password change
+3. Installed passport, passport-jwt, passport-local and jsonwebtoken
+4. Created file passport.js in config folder
+5. Updated config.js with secret
+6. Updated error handler in express.js
+7. Added login route and passport require to users.js 
+8. Updated passport file with token authorization logic
+9. Updated user.js controller with auth require (I did not set authorization on each route!)
+10. Installed aurelia-auth on client
+11. Updated aurelia.json file with aurelia-auth dependecy
+12. Created auth-config.js file in client/src folder
+13. Updated main.js with authorization changes
+14. Updated app.js with authorization changes
+15. Updated nav-bar.js with aurelia auth updates / Updated login method to store user object
+16. Added error message for nav-bar.html
+17. Changed logout method in nav-bar.js to include new authorization
+18. Added bind method to nav-bar.js
+19. Changed nav-bar.html with new authentication variable
+20. Reinstalled text
+
+
+
