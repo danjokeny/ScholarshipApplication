@@ -9,14 +9,15 @@ var config = {
               root: rootPath,
               app: { name: 'ScholarshipApplication' },
               port: 3300,  
-              db: 'mongodb://127.0.0.1/apply-dev'
-
+              db: 'mongodb://127.0.0.1/apply-dev',
+              secret: "cayennedlikedhistreats"
        },
        production: {
               root: rootPath,
               app: { name: 'ScholarshipApplication'},
               port: 80,  
-              db: 'mongodb://127.0.0.1/apply'
+              db: 'mongodb://127.0.0.1/apply',
+              secret: "cayennedlikedhistreats"
        }
 };
 
