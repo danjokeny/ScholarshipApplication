@@ -21,6 +21,8 @@ export class NavBar {
     login() {
         console.log(this.email);
         console.log(this.password);
+        this.userObj = response.user;
+        sessionStorage.setItem("userObj", JSON.stringify(this.userObj));
         this.authenticated = true;
         this.router.navigate('home');
     }

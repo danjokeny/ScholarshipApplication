@@ -21,12 +21,12 @@ export class Forms {
   }
 
   async getForms() {
-    await this.forms.getforms();
+    await this.forms.getForms();
   }
 
   newForm() {
     this.form = {
-      requesterId: this.userObj._id,
+      requesterId: "5c043e67cd945b1f801bb10c",
       reviewerId: "a1a1a1a1a1a1a1a1a1a1a1a1",
       schoolName: "",
       courseOfStudy: "",
@@ -48,8 +48,9 @@ export class Forms {
     this.form = form;
     this.openEditForm();
   }
+
   async save() {
-    if (this.form && this.form.requestorId && this.form.reviewerId) {
+    if (this.form && this.form.requesterId && this.form.reviewerId) {
       await this.forms.saveForm(this.form);
       await this.forms.getForms();
       this.back();
