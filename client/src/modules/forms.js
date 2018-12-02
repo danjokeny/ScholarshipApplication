@@ -53,7 +53,7 @@ export class Forms {
   async save() {
     if (this.form && this.form.requesterId && this.form.reviewerId) {
       await this.forms.saveForm(this.form);
-      await this.forms.getForms();
+      await this.forms.getForms(this.userObj);
       this.back();
     }
   }
