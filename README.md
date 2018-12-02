@@ -112,3 +112,4 @@ Detail Changes:
 3. added forms.html in /client/src/modules
 4. added tableForms.html in /client/src/modules/components
 5. added editForm.html in /client/src/modules/components
+6. Update nav-bar.html for application link to '#forms'
