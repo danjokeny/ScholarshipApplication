@@ -103,3 +103,9 @@ Detail Changes:
 2. added two images in public folder (1 for landing page, and 1 for eventual logout page)
 3. added image1 to the landing page
 
+Change #9
+Name: Arne Thomsen
+Date: 12/02/18
+Detail Changes:
+1. added form-object.js in /client/src/resources/data
+2. 
