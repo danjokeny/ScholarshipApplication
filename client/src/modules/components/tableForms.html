@@ -1,0 +1,42 @@
+<template>
+    <!-- set to 8 columns of 12 to not use the whole page -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <table class="table">
+                    <thead>
+                        <!-- toolbar at the top of the table -->
+                        <tr>
+                            <th colspan="4">
+                                <span click.trigger="newForm()"><i data-feather="plus"></i></span>
+                                <span click.trigger="getForms()" style="margin-left:5px;"><i data-feather="refresh-cw"></i></span>
+                            </th>
+                        </tr>
+
+                        <!-- table headings -->
+                        <tr>
+                            <th scope="col">Date Created</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">School Name</th>
+                            <th scope="col">Course of Study</th>
+                            <th scope="col">School Year</th>
+                            <th scope="col">Amount requested</th>
+                        </tr>
+                    </thead>
+
+                    <!-- table content -->
+                    <tbody>
+                        <tr click.trigger="editUser(user)" repeat.for="form of forms.formsArray">
+                            <td>${form.dateCreated}</td>
+                            <td>${form.status}</td>
+                            <td>${form.schoolName}</td>
+                            <td>${form.courseOfStudy}</td>   
+                            <td>${form.schoolYear}</td>  
+                            <td>${form.amountRequested}</td>                               
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</template>

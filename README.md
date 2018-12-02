@@ -108,4 +108,7 @@ Name: Arne Thomsen
 Date: 12/02/18
 Detail Changes:
 1. added form-object.js in /client/src/resources/data
-2. 
+2. added forms.js in /client/src/modules
+3. added forms.html in /client/src/modules
+4. added tableForms.html in /client/src/modules/components
+5. added editForm.html in /client/src/modules/components
