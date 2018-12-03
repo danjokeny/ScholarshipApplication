@@ -140,5 +140,11 @@ Detail Changes:
 19. Changed nav-bar.html with new authentication variable
 20. Reinstalled text
 
+Change #11 - Application Form 2nd round
+Name: Arne Thomsen
+Date: 12/02/18
+Detail Changes:
+1. updated form.js contructor with user object
+2. Added user object as ID for new application forms
 
 

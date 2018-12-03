@@ -10,6 +10,7 @@ export class Forms {
     this.forms = forms;
     this.message = 'Forms';
     this.showFormEditForm = false;
+    this.userObj = JSON.parse(sessionStorage.getItem('userObj'));
   }
 
   async activate() {
@@ -20,13 +21,13 @@ export class Forms {
     feather.replace()
   }
 
-  async getForms() {
-    await this.forms.getForms();
+  async getForms(userObj) {
+    await this.forms.getForms(this.userObj);
   }
 
   newForm() {
     this.form = {
-      requesterId: "5c043e67cd945b1f801bb10c",
+      requesterId: this.userObj._id,
       reviewerId: "a1a1a1a1a1a1a1a1a1a1a1a1",
       schoolName: "",
       courseOfStudy: "",
@@ -52,7 +53,7 @@ export class Forms {
   async save() {
     if (this.form && this.form.requesterId && this.form.reviewerId) {
       await this.forms.saveForm(this.form);
-      await this.forms.getForms();
+      await this.forms.getForms(this.userObj);
       this.back();
     }
   }

@@ -21,8 +21,9 @@ export class Form {
     }
 
 
-    async getForms() {
-        let response = await this.data.get(this.FORM_SERVICE);
+    async getForms(userObj) {
+        let url = '/users/email/' + userObj.email;
+        let response = await this.data.get(url);
         if (!response.error) {
             this.formsArray = response;
         } else {
