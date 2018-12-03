@@ -140,11 +140,5 @@ Detail Changes:
 19. Changed nav-bar.html with new authentication variable
 20. Reinstalled text
 
-Change #11 - User form
-Name: Joyce Miller
-Date: 12/02/18
-Detail Changes:
-1. Updated users.js to set .showUserEditForm to true
-2. Updated editUser.html - commented out back and delete buttons in the table header
-2. Updated tableUsers.html - commented out New Users and Get Users buttons in the table header
+
 
