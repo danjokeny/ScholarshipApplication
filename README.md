@@ -147,7 +147,15 @@ Detail Changes:
 1. updated form.js contructor with user object
 2. Added user object as ID for new application forms
 
-Change #12 - Fixed bug in logout
+Change #12 - Application Form 2nd round
+Name: Joyce Miller
+Date: 12/02/18
+Detail Changes:
+1. updated user.js - changed this.showUserEditForm = false to true
+2. editUser.html - commented out back and delete buttons in table header
+3. tableUsers.html - commented out New Users and Get Users buttons in the table header
+
+Change #13 - Fixed bug in logout
 Name: Arne Thomsen
 Date: 12/03/18
 Detail Changes:

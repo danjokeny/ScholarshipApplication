@@ -9,7 +9,7 @@ export class Users {
     this.router = router;
     this.users = users;
     this.message = 'Users';
-    this.showUserEditForm = false;
+    this.showUserEditForm = true;
   }
 
   async activate() {
