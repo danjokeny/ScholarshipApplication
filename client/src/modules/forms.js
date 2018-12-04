@@ -8,7 +8,7 @@ export class Forms {
   constructor(router, forms) {
     this.router = router;
     this.forms = forms;
-    this.message = 'Forms';
+    this.message = 'My Applications';
     this.showFormEditForm = false;
     this.userObj = JSON.parse(sessionStorage.getItem('userObj'));
   }

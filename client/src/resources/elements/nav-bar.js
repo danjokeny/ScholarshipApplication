@@ -39,11 +39,10 @@ export class NavBar {
     };
 
     logout() {
-        if (this.userObj) this.auth.logout(this.userObj.email);
         sessionStorage.removeItem('user');
-        this.isAuthenticated = this.auth.isAuthenticated();
         this.auth.logout();
-    }
+        this.isAuthenticated = this.auth.isAuthenticated();
+    };
 
     bind() {
         this.isAuthenticated = this.auth.isAuthenticated();
