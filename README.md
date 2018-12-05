@@ -160,3 +160,17 @@ Name: Arne Thomsen
 Date: 12/03/18
 Detail Changes:
 1. updated logout method in nav-bar.js
+
+Change #14 - Action item 1 - hide #users from non-admins
+Name: Andy Wittmann
+Date: 12/05/18
+Detail Changes:
+1. updated users.js - changed this.showUserEditForm = true to false
+2. editUser.html - un-commented back and delete buttons in table header
+3. tableUsers.html - un-commented New Users and Get Users buttons in the table header
+4. updated nav-bar.html - added show.bind="userObj.role ==='admin'" to #users link
+5. removed #home from nav-bar.html
+6. changed login() to direct to forms instead of home
+7. deleted modules home.html and home.js
+8. created value-converters\format-date.js
+9. added './value-converters/format-date' to resources\index.js

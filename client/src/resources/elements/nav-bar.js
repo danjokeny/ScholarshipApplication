@@ -29,7 +29,7 @@ export class NavBar {
                 sessionStorage.setItem("userObj", JSON.stringify(this.userObj));
                 this.loginError = "";
                 this.isAuthenticated = this.auth.isAuthenticated();
-                this.router.navigate('home');
+                this.router.navigate('forms');
             })
             .catch(error => {
                 console.log(error);

@@ -9,7 +9,7 @@ export class Users {
     this.router = router;
     this.users = users;
     this.message = 'Users';
-    this.showUserEditForm = true;
+    this.showUserEditForm = false;
   }
 
   async activate() {
@@ -53,10 +53,11 @@ export class Users {
   }
 
   async save() {
-    if (this.user && this.user.firstName && this.user.lastName
+    if (this.user.firstName && this.user.lastName
       && this.user.email && this.user.password && this.user.phone) {
       await this.users.saveUser(this.user);
       await this.users.getUsers();
+
       this.back();
     }
   }
