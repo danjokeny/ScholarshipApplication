@@ -213,11 +213,15 @@ Date: 12/10/18
 6.  added new images and updated the scholarships page
 7.  fixed problem where one could not delete a user
 8.  added known bug/enhancements needed section to readme below
+9.  fixed bug where amount requested could not be updated
 
 
-==========================
-Known bugs / enhancements:
+===============================================
+Known bugs / enhancements / behavior questions:
 1.  should we move the create user button to nave bar?
 2.  when logging in, the screen goes to applications, 
     ----but applications not selected in nav bar
-3.  
+3.  when deleting a user, should it also delete all applications for that user?
+4.  i think we need to now add a content schema (we originally said no)
+    ---if we are going to allow file upload, it should attach it to something, so new content?
+5.  is the amount supposed to default to $2500?

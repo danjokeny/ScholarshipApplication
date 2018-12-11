@@ -32,7 +32,7 @@ export class Forms {
       schoolName: "",
       courseOfStudy: "",
       schoolYear: "",
-      amountRequested: "",
+      amountRequested: "2500",
       applicantComments: "",
       reviewComments: "",
       status: "new",
