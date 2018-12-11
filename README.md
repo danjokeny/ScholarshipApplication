@@ -199,3 +199,11 @@ Detail Changes:
 12. Added file folder to config.js file
 13. Updated editForm.html with a more descriptive text related to the file upload
 14. Updated database schema for forms to include file
+
+Change #16 -
+Name: danny forero
+Date: 12/10/18
+Detail Changes:
+1.  added images folder
+2.  moved image from publics to image folder
+3.  updated landing.html to look at new image folder
