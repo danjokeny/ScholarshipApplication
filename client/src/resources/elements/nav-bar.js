@@ -13,14 +13,16 @@ export class NavBar {
         this.email = "";
         this.password = "";
     }
-    // runs after the browser builds the html
-    // uses jQuery from bootstrap.  Makes menu items respond to clicks
+
+    
+
+    //jQuery lifecycle method for highlighting selected menu option
     attached() {
         $('.navbar-nav a').on('click', function () {
             $('.navbar-nav').find('li.active').removeClass('active');
             $(this).parent('li').addClass('active');
         });
-    }
+    };
 
     login() {
         return this.auth.login(this.email, this.password)
@@ -48,5 +50,5 @@ export class NavBar {
     bind() {
         this.isAuthenticated = this.auth.isAuthenticated();
     }
-    
+
 }

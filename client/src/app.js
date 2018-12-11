@@ -12,16 +12,10 @@ export class App {
         auth: false
       },
       {
-        route: 'home',
-        moduleId: './modules/home',
-        name: 'Home',        
-        auth: true
-      },
-      {
         route: 'users',
         moduleId: './modules/users',
         name: 'Users',
-        auth: false
+        auth: true
       },
       {
         route: 'forms',
