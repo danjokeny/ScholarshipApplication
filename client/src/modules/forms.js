@@ -22,7 +22,13 @@ export class Forms {
   }
 
   async getForms(userObj) {
-    await this.forms.getForms(this.userObj);
+    console.log('this.userObj.role = ' + this.userObj.role);
+    if (this.userObj.role = "admin") {
+        await this.forms.getForms(this.userObj);
+    } else {
+        await this.forms.getFormsUser(this.userObj);
+    }
+    
   }
 
   newForm() {
@@ -82,7 +88,7 @@ export class Forms {
   delete(form) {
     this.form = form;
     this.forms.deleteForm(this.form._id);
-    await this.forms.getForms(this.userObj);
+    this.forms.getForms(this.userObj);
     this.back();
   }
 

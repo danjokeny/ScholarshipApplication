@@ -216,6 +216,8 @@ Date: 12/10/18
 9.  fixed bug where amount requested could not be updated
 10.  allowed for delete of application form
 11. defaulted amount to 0 on the add new application page
+12.  admin and reviewers call different route to get all application forms
+
 
 
 ===============================================
@@ -228,5 +230,4 @@ Known bugs / enhancements / behavior questions:
     ---if we are going to allow file upload, it should attach it to something, so new content?
 5.  is the amount supposed to default to $2500?
 6.  requestors can only see their applications, 
-    --but admin and reviewer should see all 
     -- not working

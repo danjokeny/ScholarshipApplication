@@ -22,6 +22,16 @@ export class Form {
 
 
     async getForms(userObj) {
+        let url = 'forms/';
+        let response = await this.data.get(url);
+        if (!response.error) {
+            this.formsArray = response;
+        } else {
+            this.formsArray = [];
+        }
+    }
+
+    async getFormsUser(userObj) {
         let url = '/users/email/' + userObj.email;
         let response = await this.data.get(url);
         if (!response.error) {
