@@ -50,6 +50,13 @@ export class Forms {
     this.openEditForm();
   }
 
+  
+  back() {
+    this.showFormEditForm = false;
+    this.filesToUpload = new Array();
+    this.files = new Array();
+  }
+
   async save() {
     if (this.form && this.form.requesterId && this.form.reviewerId) {
       let serverResponse = await this.forms.saveForm(this.form);
@@ -59,11 +66,7 @@ export class Forms {
     }
   }
 
-  back() {
-    this.showFormEditForm = false;
-    this.filesToUpload = new Array();
-    this.files = new Array();
-  }
+  
 
   changeFiles() {
     this.filesToUpload = this.filesToUpload ? this.filesToUpload : new Array();
@@ -76,7 +79,6 @@ export class Forms {
     }
   }
 
-
   delete(form) {
     this.form = form;
     this.forms.deleteForm(this.form._id);
@@ -84,6 +86,4 @@ export class Forms {
     this.back();
   }
 
-
 }
-
