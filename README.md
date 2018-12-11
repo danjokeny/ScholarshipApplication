@@ -174,3 +174,9 @@ Detail Changes:
 7. deleted modules home.html and home.js
 8. created value-converters\format-date.js
 9. added './value-converters/format-date' to resources\index.js
+
+Change #15 - Fixed date format
+Name: Arne Thomsen
+Date: 12/10/18
+Detail Changes:
+1. updated tableForms.html to use date converter
