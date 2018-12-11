@@ -32,7 +32,7 @@ export class Forms {
       schoolName: "",
       courseOfStudy: "",
       schoolYear: "",
-      amountRequested: "2500",
+      amountRequested: 0,
       applicantComments: "",
       reviewComments: "",
       status: "new",
@@ -76,13 +76,14 @@ export class Forms {
     }
   }
 
-  
+
   delete(form) {
     this.form = form;
     this.forms.deleteForm(this.form._id);
     await this.forms.getForms(this.userObj);
     this.back();
   }
+
 
 }
 
