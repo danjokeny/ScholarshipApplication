@@ -1,10 +1,12 @@
 var express = require('express'),
     router = express.Router(),
     logger = require('../../config/logger'),
+    multer = require('multer'),
+    mkdirp = require('mkdirp'),
     asyncHandler = require('express-async-handler');
 
 mongoose = require('mongoose'),
-Form = mongoose.model('Form');
+    Form = mongoose.model('Form');
 //FormContent = mongoose.model('FormContent'),
 
 module.exports = function (app, config) {
@@ -28,11 +30,10 @@ module.exports = function (app, config) {
     router.post('/forms', asyncHandler(async (req, res) => {
         logger.log('info', 'POST Create new application form');
         var form = new Form(req.body);
-        console.log(req.body);
         await form.save()
-        .then(result => {
-                res.status(201).json(result);
-        })
+            .then(result => {
+                res.status(201).json({contentID: result._id});
+            })
     }));
 
 
@@ -44,16 +45,16 @@ module.exports = function (app, config) {
         let query = Form.find();
         query
             .sort(req.query.order)
-                .populate({path: 'requesterId', model: 'User', select: 'lastName firstName '} )
-                .populate({path: 'reviewerId', model: 'User', select: 'lastName firstName '} );
+            .populate({ path: 'requesterId', model: 'User', select: 'lastName firstName ' })
+            .populate({ path: 'reviewerId', model: 'User', select: 'lastName firstName ' });
 
-        if(req.query.status){
-            if(req.query.status[0] == '-'){
-                 query.where('status').ne(req.query.status.substring(1));
+        if (req.query.status) {
+            if (req.query.status[0] == '-') {
+                query.where('status').ne(req.query.status.substring(1));
             } else {
                 query.where('status').eq(req.query.status);
             }
-         }
+        }
         await query.exec().then(result => {
             res.status(200).json(result);
         })
@@ -76,9 +77,47 @@ module.exports = function (app, config) {
         logger.log('info', 'Updating form');
         await Form.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true })
             .then(result => {
-                res.status(200).json(result);
+                res.status(201).json({contentID: result._id});
             })
     }));
+
+    var storage = multer.diskStorage({
+        destination: function (req, file, cb) {
+            var path = config.uploads + '/forms';
+            mkdirp(path, function (err) {
+                if (err) {
+                    res.status(500).json(err);
+                } else {
+                    cb(null, path);
+                }
+            });
+        },
+        filename: function (req, file, cb) {
+            file.fileName = file.originalname;
+            cb(null, file.fieldname + '-' + Date.now());
+        }
+    });
+
+    var upload = multer({ storage: storage });
+
+    router.post('/forms/upload/:id', upload.any(), asyncHandler(async (req, res) => {
+        logger.log('info', 'Uploading files');
+        await Form.findById(req.params.id).then(result => {
+            for (var i = 0, x = req.files.length; i < x; i++) {
+                var file = {
+                    originalFileName: req.files[i].originalname,
+                    fileName: req.files[i].filename
+                };
+                result.file = file;
+            }
+            result.save().then(result => {
+                res.status(200).json(result);
+            });
+        })
+    }));
+
+
+
 
 
 };

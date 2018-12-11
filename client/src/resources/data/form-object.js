@@ -30,4 +30,8 @@ export class Form {
             this.formsArray = [];
         }
     }
+
+    async uploadFile(files, id) {
+        await this.data.uploadFiles(files, this.FORM_SERVICE + "/upload/" + id);
+    }
 }

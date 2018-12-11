@@ -10,14 +10,16 @@ var config = {
               app: { name: 'ScholarshipApplication' },
               port: 3300,  
               db: 'mongodb://127.0.0.1/apply-dev',
-              secret: "cayennedlikedhistreats"
+              secret: "cayennedlikedhistreats",
+              uploads: './public/uploadedFiles'
        },
        production: {
               root: rootPath,
               app: { name: 'ScholarshipApplication'},
               port: 80,  
               db: 'mongodb://127.0.0.1/apply',
-              secret: "cayennedlikedhistreats"
+              secret: "cayennedlikedhistreats",
+              uploads: './public/uploadedFiles' 
        }
 };
 

@@ -28,6 +28,10 @@ var formSchema = new Schema({
     applicantComments: {type: String},
     reviewComments: {type: String},
     status: {type: String, enum:['new', 'approved', 'denied'], default: 'new'},
+    file: {
+        fileName: { type: String },
+        originalFileName: { type: String }
+        },        
     dateCreated: {type: Date, default: Date.now}
 });
 

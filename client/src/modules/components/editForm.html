@@ -25,10 +25,29 @@
                     <label for="amountRequested">Amount Requested</label>
                     <input type="email" class="form-control" value.bind="form.amountRequested" placeholder="2500">
                 </div>
+                <div class="row">
+                    <div class="col-2">
+                        <label class="btn btn-primary">
+                            Browse for files&hellip; <input type="file" style="display: none;" change.delegate="changeFiles()"
+                                files.bind="files">
+                        </label>
+                    </div>
+                    <div class="col-10">
+                        <ul>
+                            <li repeat.for="file of filesToUpload" class="list-group-item">${file.name}<span
+                                    click.delegate="removeFile($index)" class="pull-right"></li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="form-group">
-                    <label for="applicantComment">Your Application</label>
+                    <label for="applicantComment">Your Application (please upload your formal application as a PDF file and add additional comments in the box below)</label>
                     <textarea class="form-control" rows="10" value.bind="form.applicantComments" placeholder="Please add your full application here."></textarea>
                 </div>
+                <div>
+                    <a href="http://localhost:3300/uploadedFiles/forms/${form.file.fileName}" target="_blank">${form.file.originalFileName}</a>
+                </div>
+
             </div>
         </div>
     </div>
