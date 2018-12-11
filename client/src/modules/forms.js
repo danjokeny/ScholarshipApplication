@@ -76,5 +76,13 @@ export class Forms {
     }
   }
 
+  
+  delete(form) {
+    this.form = form;
+    this.forms.deleteForm(this.form._id);
+    await this.forms.getForms(this.userObj);
+    this.back();
+  }
+
 }
 

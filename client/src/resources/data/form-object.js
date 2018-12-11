@@ -34,4 +34,14 @@ export class Form {
     async uploadFile(files, id) {
         await this.data.uploadFiles(files, this.FORM_SERVICE + "/upload/" + id);
     }
+
+
+    //deleteForm
+    async deleteForm(inForm) {
+        let serverResponse;
+        if (inForm) {
+            await this.data.delete(this.FORM_SERVICE + '/' + inForm)
+        };
+        return serverResponse;
+    };
 }

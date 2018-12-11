@@ -214,6 +214,7 @@ Date: 12/10/18
 7.  fixed problem where one could not delete a user
 8.  added known bug/enhancements needed section to readme below
 9.  fixed bug where amount requested could not be updated
+10.  allowed for delete of application form
 
 
 ===============================================

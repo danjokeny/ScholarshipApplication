@@ -117,7 +117,17 @@ module.exports = function (app, config) {
     }));
 
 
+    //Delete forms
+    //Sample: http://localhost:3300/api/forms/5c0fd3b69ba362562820fdec (DELETE)
+    router.delete('/forms/:id', asyncHandler(async (req, res) => {
+        logger.log('info', 'Delete application form =>%s<', req.params.id);
 
+        let query = Form.remove();
+        query.where('_id').eq(req.params.id);
+        await query.exec().then(result => {
+                res.status(200).json(result);
+        })
+    }));
 
 
 };
