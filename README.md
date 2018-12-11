@@ -215,6 +215,7 @@ Date: 12/10/18
 8.  added known bug/enhancements needed section to readme below
 9.  fixed bug where amount requested could not be updated
 10.  allowed for delete of application form
+11. defaulted amount to 0 on the add new application page
 
 
 ===============================================
@@ -226,3 +227,6 @@ Known bugs / enhancements / behavior questions:
 4.  i think we need to now add a content schema (we originally said no)
     ---if we are going to allow file upload, it should attach it to something, so new content?
 5.  is the amount supposed to default to $2500?
+6.  requestors can only see their applications, 
+    --but admin and reviewer should see all 
+    -- not working
