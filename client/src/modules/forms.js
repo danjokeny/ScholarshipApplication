@@ -52,7 +52,8 @@ export class Forms {
 
   async save() {
     if (this.form && this.form.requesterId && this.form.reviewerId) {
-      await this.forms.saveForm(this.form);
+      let serverResponse = await this.forms.saveForm(this.form);
+      if (this.filesToUpload && this.filesToUpload.length > 0) this.forms.uploadFile(this.filesToUpload, serverResponse.contentID);
       await this.forms.getForms(this.userObj);
       this.back();
     }
@@ -60,6 +61,20 @@ export class Forms {
 
   back() {
     this.showFormEditForm = false;
+    this.filesToUpload = new Array();
+    this.files = new Array();
   }
+
+  changeFiles() {
+    this.filesToUpload = this.filesToUpload ? this.filesToUpload : new Array();
+    for (var i = 0; i < this.files.length; i++) {
+      let addFile = true;
+      this.filesToUpload.forEach(item => {
+        if (item.name === this.files[i].name) addFile = false;
+      })
+      if (addFile) this.filesToUpload.push(this.files[i]);
+    }
+  }
+
 }
 

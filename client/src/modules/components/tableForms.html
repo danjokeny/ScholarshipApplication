@@ -27,7 +27,7 @@
                     <!-- table content -->
                     <tbody>
                         <tr click.trigger="editForm(form)" repeat.for="form of forms.formsArray">
-                            <td>${form.dateCreated}</td>
+                            <td innerhtml.bind="form.dateCreated | formatDate"></td>
                             <td>${form.status}</td>
                             <td>${form.schoolName}</td>
                             <td>${form.courseOfStudy}</td>   

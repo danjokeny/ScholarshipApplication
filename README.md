@@ -174,3 +174,28 @@ Detail Changes:
 7. deleted modules home.html and home.js
 8. created value-converters\format-date.js
 9. added './value-converters/format-date' to resources\index.js
+
+Change #15 - Fixed date format
+Name: Arne Thomsen
+Date: 12/10/18
+Detail Changes:
+1. updated tableForms.html to use date converter
+
+Change #16 - Added file upload for application
+Name: Arne Thomsen
+Date: 12/10/18
+Detail Changes:
+1. NPM install for multer and mkdirp and require in forms.js controller file
+2. Updated controller file forms.js with class content (copy&paste from PPT, adapt to forms)
+3. Updated data-services.js with class content (copy&paste from PPT)
+4. Updated form-object with uploadFile method
+5. Updated editForm.html with file upload button
+6. Updated forms.js back method per class instruction
+7. Added changeFiles method to forms.js
+8. Updated save method in forms.js with file handling
+9. Updated controller forms.js to include form ID in response of post method
+10. Updated editForm.html with hyperlink to uploaded file
+11. Updated gitignore to ignore uploaded files in public folder
+12. Added file folder to config.js file
+13. Updated editForm.html with a more descriptive text related to the file upload
+14. Updated database schema for forms to include file
