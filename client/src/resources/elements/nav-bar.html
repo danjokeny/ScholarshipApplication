@@ -1,6 +1,6 @@
 <template>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Scholarship</a>
+            <a class="navbar-brand" href="#">MyScholarship!</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -20,7 +20,7 @@
                         <input type="password" class="form-control" id="inputPassword2" value.bind="password" placeholder="Password">
                     </div>
                     <button click.trigger="login()" class="btn btn-primary mb-2">Login</button>
-                    <span show.bind="loginError" style="color:white;margin-left:10px;">${loginError}</span>
+                    <span show.bind="!loginMessage" style="color:white;margin-left:10px;">${loginMessage}</span>
                 </form>
     
                 <!--menu items in the nav bar-->
@@ -34,7 +34,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#" click.trigger="logout()">Logout</a>
                     </li>
-    
+                    <span show.bind="loginMessage" style="color:white;margin-left:10px;">${loginMessage}</span>
                 </ul>
             </div>
         </nav>

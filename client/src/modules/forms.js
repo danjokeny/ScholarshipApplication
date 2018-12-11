@@ -7,10 +7,11 @@ import { Form } from '../resources/data/form-object'
 export class Forms {
   constructor(router, forms) {
     this.router = router;
-    this.forms = forms;
-    this.message = 'My Applications';
-    this.showFormEditForm = false;
     this.userObj = JSON.parse(sessionStorage.getItem('userObj'));
+    this.forms = forms;
+    this.message = 'Scholarship Applications';
+    this.message2 = 'For ' + this.userObj.firstName + ' ' + this.userObj.lastName;
+    this.showFormEditForm = false;
   }
 
   async activate() {
@@ -21,14 +22,23 @@ export class Forms {
     feather.replace()
   }
 
-  async getForms(userObj) {
+
+  async getForms() {
     console.log('this.userObj.role = ' + this.userObj.role);
-    if (this.userObj.role = "admin") {
+
+    if (this.userObj) {
+      if (this.userObj.role == "admin") {
         await this.forms.getForms(this.userObj);
-    } else {
+      } else if (this.userObj.role == "reviewer") {
+        await this.forms.getForms(this.userObj);
+      }
+      else {
         await this.forms.getFormsUser(this.userObj);
+      }
     }
-    
+
+
+
   }
 
   newForm() {
@@ -56,7 +66,7 @@ export class Forms {
     this.openEditForm();
   }
 
-  
+
   back() {
     this.showFormEditForm = false;
     this.filesToUpload = new Array();
@@ -72,7 +82,7 @@ export class Forms {
     }
   }
 
-  
+
 
   changeFiles() {
     this.filesToUpload = this.filesToUpload ? this.filesToUpload : new Array();

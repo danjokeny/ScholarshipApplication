@@ -209,7 +209,7 @@ Detail Changes:
 3.  updated landing.html to look at new image folder
 4.  updated all htmls to use css files....i am color blind so if you dont like the color scheme work with me  please
 5.  added new images and updated users image page
-Date: 12/10/18
+Date: 12/11/18
 6.  added new images and updated the scholarships page
 7.  fixed problem where one could not delete a user
 8.  added known bug/enhancements needed section to readme below
@@ -217,6 +217,9 @@ Date: 12/10/18
 10.  allowed for delete of application form
 11. defaulted amount to 0 on the add new application page
 12.  admin and reviewers call different route to get all application forms
+13.  requestors can only see their applications
+14.  added welcome login message to nav bar
+15.  added secone message line to users and forms page
 
 
 
@@ -229,5 +232,3 @@ Known bugs / enhancements / behavior questions:
 4.  i think we need to now add a content schema (we originally said no)
     ---if we are going to allow file upload, it should attach it to something, so new content?
 5.  is the amount supposed to default to $2500?
-6.  requestors can only see their applications, 
-    -- not working
