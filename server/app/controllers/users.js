@@ -130,4 +130,16 @@ module.exports = function (app, config) {
 
     router.route('/users/login').post(requireLogin, login);
 
+    //Delete user
+    //Sample: http://localhost:3300/api/users/5bfcc33f0caa9233685104bc (DELETE)
+    router.delete('/users/:id', asyncHandler(async (req, res) => {
+        logger.log('info', 'Delete users =>%s<', req.params.id);
+
+        let query = User.remove();
+        query.where('_id').eq(req.params.id);
+        await query.exec().then(result => {
+                res.status(200).json(result);
+        })
+    }));
+
 };

@@ -1,5 +1,18 @@
 <template>
-        <h1>${message}</h1>
-         <compose show.bind="showFormEditForm" view="./components/editForm.html"></compose>
-         <compose show.bind="!showFormEditForm" view="./components/tableForms.html"></compose>
+    <require from="./home.css"></require>
+
+    <h1>${message}</h1>
+
+    <div class="container"></div>
+        <div class="row">
+            <div class="col-9" >
+                <compose show.bind="showFormEditForm" view="./components/editForm.html"></compose>
+                <compose show.bind="!showFormEditForm" view="./components/tableForms.html"></compose>
+            </div>
+            <div class="col-3" >
+                <img src="../images/graduate_with_diploma.png" class="img-fluid" alt="Responsive image" >
+            </div>
+        </div>
+    </div>
+
 </template>

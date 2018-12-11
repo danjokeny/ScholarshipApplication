@@ -201,7 +201,7 @@ Detail Changes:
 14. Updated database schema for forms to include file
 
 Change #16 -
-Name: danny forero
+Name: Danny Forero
 Date: 12/10/18
 Detail Changes:
 1.  added images folder
@@ -209,3 +209,15 @@ Detail Changes:
 3.  updated landing.html to look at new image folder
 4.  updated all htmls to use css files....i am color blind so if you dont like the color scheme work with me  please
 5.  added new images and updated users image page
+Date: 12/10/18
+6.  added new images and updated the scholarships page
+7.  fixed problem where one could not delete a user
+8.  added known bug/enhancements needed section to readme below
+
+
+==========================
+Known bugs / enhancements:
+1.  should we move the create user button to nave bar?
+2.  when logging in, the screen goes to applications, 
+    ----but applications not selected in nav bar
+3.  
