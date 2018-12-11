@@ -207,3 +207,5 @@ Detail Changes:
 1.  added images folder
 2.  moved image from publics to image folder
 3.  updated landing.html to look at new image folder
+4.  updated all htmls to use css files....i am color blind so if you dont like the color scheme work with me  please
+5.  

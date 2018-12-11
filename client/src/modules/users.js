@@ -8,7 +8,7 @@ export class Users {
   constructor(router, users) {
     this.router = router;
     this.users = users;
-    this.message = 'Users';
+    this.message = 'Scholarship Application Users';
     this.showUserEditForm = false;
   }
 
