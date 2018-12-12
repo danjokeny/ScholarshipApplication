@@ -89,8 +89,12 @@ export class Forms {
       };
       //save data from the form
       let serverResponse = await this.forms.saveForm(this.form);
-      if (this.filesToUpload && this.filesToUpload.length > 0) this.forms.uploadFile(this.filesToUpload, serverResponse.contentID);
-      await this.forms.getForms(this.userObj);
+      if (this.filesToUpload && this.filesToUpload.length > 0) {
+        this.forms.uploadFile(this.filesToUpload, serverResponse.contentID);
+      }
+      
+      
+      this.getForms(this.userObj);
       this.back();
     }
   }

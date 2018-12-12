@@ -236,6 +236,7 @@ Date: 12/12/2018
 24.  made status in editForm a dropdown selector instead of text box
 25.  changed name on tableForms to be Requestor
 26.  added Reviewer to tableForms (only visible for admin and reviewer)
+27.  fixed bug when saving was not going to get a refreshed list of forms correctly
 
 
 Change ## -
