@@ -9,7 +9,7 @@ export class Users {
     this.router = router;
     this.users = users;
     this.message = 'Scholarship Applications';
-    this.message2 = 'List ofUsers';
+    this.message2 = 'List of Users - Administrator Access';
     this.showUserEditForm = false;
   }
 

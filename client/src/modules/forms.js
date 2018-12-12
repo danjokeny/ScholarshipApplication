@@ -11,6 +11,7 @@ export class Forms {
     this.forms = forms;
     this.message = 'Scholarship Applications';
     this.message2 = 'For ' + this.userObj.firstName + ' ' + this.userObj.lastName;
+    this.showNameInTable = false;
     this.showFormEditForm = false;
   }
 
@@ -29,11 +30,14 @@ export class Forms {
 
     if (this.userObj) {
       if (this.userObj.role == "admin") {
+        this.showNameInTable = true;
         await this.forms.getForms(this.userObj);
       } else if (this.userObj.role == "reviewer") {
+        this.showNameInTable = true;
         await this.forms.getForms(this.userObj);
       }
       else {
+        this.showNameInTable = false;
         await this.forms.getFormsUser(this.userObj);
       }
     }

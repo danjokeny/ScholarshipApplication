@@ -42,7 +42,7 @@ export class NavBar {
     };
 
     logout() {
-        sessionStorage.removeItem('user');
+        sessionStorage.removeItem('userObj');
         this.auth.logout();
         this.isAuthenticated = this.auth.isAuthenticated();
     };

@@ -223,6 +223,12 @@ Date: 12/11/18
 16.  fixed bug where applications form was loaded upon login but not selected in the navbar
 17.  added name to the grid for applications -- for admin and reviewer
 18.  hide name on the grid for requestors, all they see are their own
+Date: 12/12/2018
+19.  centered the users table on users page 
+20.  table for applications is now working correctly
+     --shows name for admin/reviewer
+     --does not show name for requestors
+
 
 Change ## -
 Name: 
@@ -236,4 +242,4 @@ Known bugs / enhancements / behavior questions:
 3.  i think we need to now add a content schema (we originally said no)
     ---if we are going to allow file upload, it should attach it to something, so new content?
 4.  is the amount supposed to default to $2500?
-5.  cant seem to hide both column heading and column data for name
+

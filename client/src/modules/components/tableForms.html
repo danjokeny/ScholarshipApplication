@@ -11,17 +11,8 @@
                             </th>
                         </tr>
 
-                        <tr show.bind= "userObj.role = 'requestor'">
-                            <th scope="col">Date Created</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">School Name</th>
-                            <th scope="col">Course of Study</th>
-                            <th scope="col">School Year</th>
-                            <th scope="col">Amount requested</th>
-                        </tr>
-
-                        <tr show.bind= "userObj.role != 'requestor'">
-                                <th scope="col">Name</th>
+                        <tr >
+                                <th scope="col" show.bind="showNameInTable">Name</th>
                                 <th scope="col">Date Created</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">School Name</th>
@@ -34,7 +25,7 @@
 
                     <tbody>
                         <tr click.trigger="editForm(form)" repeat.for="form of forms.formsArray">
-                            <td show.bind= "userObj.role != 'requestor'">
+                            <td show.bind="showNameInTable">
                                 ${form.requesterId.firstName}
 
                                 ${form.requesterId.lastName}
