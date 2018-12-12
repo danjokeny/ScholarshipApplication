@@ -81,7 +81,13 @@ export class Forms {
   }
 
   async save() {
-    if (this.form && this.form.requesterId && this.form.reviewerId) {
+    if (this.form && this.form.requesterId) {
+      //check if person editing is admin/staff, if so, set owner id
+      if (this.form.role !== 'requestor') {
+        console.log('set reviewerId id')
+        this.form.reviewerId = this.userObj._id;
+      };
+      //save data from the form
       let serverResponse = await this.forms.saveForm(this.form);
       if (this.filesToUpload && this.filesToUpload.length > 0) this.forms.uploadFile(this.filesToUpload, serverResponse.contentID);
       await this.forms.getForms(this.userObj);

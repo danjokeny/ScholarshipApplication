@@ -10,9 +10,14 @@
                     <span show.bind="form._id" click.trigger="delete(form)"><i data-feather="trash"></i></span>
                 </div>
                 <!-- edit application form -->
-                <div class="form-group" style="margin-top:20px;" show.bind="showStatusInForm">
+
+                <div class="form-group" show.bind="showStatusInForm" style="margin-top:20px;">
                     <label for="Status">Status</label>
-                    <input type="email" class="form-control" value.bind="form.status">
+                    <select value.bind="form.status" class="form-control" id="Status">
+                        <option value="new">New</option>
+                        <option value="approved">Approved</option>
+                        <option value="denied">Denied</option>
+                    </select>
                 </div>
                 <div class="form-group" style="margin-top:20px;">
                     <label for="schoolName">School name</label>
@@ -24,10 +29,12 @@
                 </div>
                 <div class="form-group">
                     <label for="schoolYear">School Year</label>
+                    <label class="warn" for="schoolYearWarn">*must be a numeric year</label>
                     <input type="email" class="form-control" value.bind="form.schoolYear">
                 </div>
                 <div class="form-group">
                     <label for="amountRequested">Amount Requested</label>
+                    <label class="warn" for="amountWarn">*must be a numeric dollar amount</label>
                     <input type="email" class="form-control" value.bind="form.amountRequested" >
                 </div>
                 <div class="row">

@@ -231,6 +231,9 @@ Date: 12/12/2018
 21.  add status to the editForm page.  
      --when requestor adds a new application, they cannot enter status, and defaults to new
      --when a reviewer/admin edit a application, they can see/change the status
+22.  if admin/reviewer, then populate the reviewer id in the application
+23.  add a warning for school year and $amount to be numeric
+24.  made status in editForm a dropdown selector instead of text box
 
 
 Change ## -

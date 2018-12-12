@@ -1,6 +1,10 @@
 * {     font-family:  Helvetica;
 }
 
+.warn {
+  font-size: 12px;
+}
+
 h1 {
     color: red;
     text-align: center;
