@@ -221,7 +221,8 @@ Date: 12/11/18
 14.  added welcome login message to nav bar
 15.  added second message line to users and forms page
 16.  fixed bug where applications form was loaded upon login but not selected in the navbar
-
+17.  added name to the grid for applications -- for admin and reviewer
+18.  hide name on the grid for requestors, all they see are their own
 
 Change ## -
 Name: 

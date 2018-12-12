@@ -15,6 +15,7 @@ export class Forms {
   }
 
   async activate() {
+
     await this.getForms();
   }
 
@@ -36,9 +37,7 @@ export class Forms {
         await this.forms.getFormsUser(this.userObj);
       }
     }
-
-
-
+    console.log('this.userObj.role = ' + this.userObj.role);
   }
 
   newForm() {
