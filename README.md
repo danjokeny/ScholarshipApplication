@@ -220,6 +220,7 @@ Date: 12/11/18
 13.  requestors can only see their applications
 14.  added welcome login message to nav bar
 15.  added second message line to users and forms page
+16.  fixed bug where applications form was loaded upon login but not selected in the navbar
 
 
 Change ## -
@@ -230,9 +231,7 @@ Detail Changes:
 ===============================================
 Known bugs / enhancements / behavior questions:
 1.  should we move the create user button to nave bar?
-2.  when logging in, the screen goes to applications, 
-    ----but applications not selected in nav bar
-3.  when deleting a user, should it also delete all applications for that user?
-4.  i think we need to now add a content schema (we originally said no)
+2.  when deleting a user, should it also delete all applications for that user?
+3.  i think we need to now add a content schema (we originally said no)
     ---if we are going to allow file upload, it should attach it to something, so new content?
-5.  is the amount supposed to default to $2500?
+4.  is the amount supposed to default to $2500?
