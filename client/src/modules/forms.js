@@ -51,7 +51,7 @@ export class Forms {
   newForm() {
     this.form = {
       requesterId: this.userObj._id,
-      reviewerId: "a1a1a1a1a1a1a1a1a1a1a1a1",
+      reviewerId: this.userObj._id,
       schoolName: "",
       courseOfStudy: "",
       schoolYear: "",
@@ -83,7 +83,7 @@ export class Forms {
   async save() {
     if (this.form && this.form.requesterId) {
       //check if person editing is admin/staff, if so, set owner id
-      if (this.form.role !== 'requestor') {
+      if (this.userObj.role !== 'requester') {
         console.log('set reviewerId id')
         this.form.reviewerId = this.userObj._id;
       };

@@ -12,13 +12,14 @@
                         </tr>
 
                         <tr >
-                                <th scope="col" show.bind="showNameInTable">Name</th>
+                                <th scope="col" show.bind="showNameInTable">Requestor</th>
                                 <th scope="col">Date Created</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">School Name</th>
                                 <th scope="col">Course of Study</th>
                                 <th scope="col">School Year</th>
                                 <th scope="col">Amount requested</th>
+                                <th scope="col" show.bind="showNameInTable">Reviewer</th>
                             </tr>
 
                     </thead>
@@ -36,6 +37,11 @@
                             <td>${form.courseOfStudy}</td>
                             <td>${form.schoolYear}</td>
                             <td>${form.amountRequested}</td>
+                            <td show.bind="showNameInTable">
+                                ${form.reviewerId.firstName}
+
+                                ${form.reviewerId.lastName}
+                            </td>
                         </tr>
                     </tbody>
                 </table>

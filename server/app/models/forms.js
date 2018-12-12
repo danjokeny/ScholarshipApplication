@@ -20,7 +20,7 @@ var Schema = Mongoose.Schema;
 
 var formSchema = new Schema({
     requesterId: {type: Schema.Types.ObjectId, require: true},
-    reviewerId: {type: Schema.Types.ObjectId, require: true},
+    reviewerId: {type: Schema.Types.ObjectId, require: false},
     schoolName: {type: String, require: false},
     courseOfStudy: {type: String, require: false},
     schoolYear: {type: Number, require: false},

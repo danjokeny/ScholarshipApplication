@@ -234,6 +234,8 @@ Date: 12/12/2018
 22.  if admin/reviewer, then populate the reviewer id in the application
 23.  add a warning for school year and $amount to be numeric
 24.  made status in editForm a dropdown selector instead of text box
+25.  changed name on tableForms to be Requestor
+26.  added Reviewer to tableForms (only visible for admin and reviewer)
 
 
 Change ## -
