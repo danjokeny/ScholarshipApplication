@@ -228,6 +228,9 @@ Date: 12/12/2018
 20.  table for applications is now working correctly
      --shows name for admin/reviewer
      --does not show name for requestors
+21.  add status to the editForm page.  
+     --when requestor adds a new application, they cannot enter status, and defaults to new
+     --when a reviewer/admin edit a application, they can see/change the status
 
 
 Change ## -

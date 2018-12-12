@@ -10,6 +10,10 @@
                     <span show.bind="form._id" click.trigger="delete(form)"><i data-feather="trash"></i></span>
                 </div>
                 <!-- edit application form -->
+                <div class="form-group" style="margin-top:20px;" show.bind="showStatusInForm">
+                    <label for="Status">Status</label>
+                    <input type="email" class="form-control" value.bind="form.status">
+                </div>
                 <div class="form-group" style="margin-top:20px;">
                     <label for="schoolName">School name</label>
                     <input type="email" class="form-control" value.bind="form.schoolName">
