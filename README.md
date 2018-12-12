@@ -236,3 +236,4 @@ Known bugs / enhancements / behavior questions:
 3.  i think we need to now add a content schema (we originally said no)
     ---if we are going to allow file upload, it should attach it to something, so new content?
 4.  is the amount supposed to default to $2500?
+5.  cant seem to hide both column heading and column data for name
