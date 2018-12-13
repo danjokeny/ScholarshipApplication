@@ -266,6 +266,7 @@ Known bugs / enhancements / behavior questions:
     -- freedom to decide on focus lost, or on save whichever you can get done
     -- andy
     -- changed input type to number, preventing entry of non-numeric values
+    -- removed warnings for numbers
 7.  add auth to the routes -- Arne
 
 
