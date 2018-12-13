@@ -55,7 +55,7 @@ export class Forms {
       schoolName: "",
       courseOfStudy: "",
       schoolYear: "",
-      amountRequested: 0,
+      amountRequested: 2500,
       applicantComments: "",
       reviewComments: "",
       status: "new",

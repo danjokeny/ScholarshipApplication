@@ -238,6 +238,14 @@ Date: 12/12/2018
 26.  added Reviewer to tableForms (only visible for admin and reviewer)
 27.  fixed bug when saving was not going to get a refreshed list of forms correctly
 
+Change #17 -
+Name: Andy Wittmann
+Date: 12/13/18
+Detail Changes:
+1.  changed default amountRequested in forms.js newForm() from 0 to 2500
+2.  changed "input type" of amountRequested and schoolYear in editForm.html from 'email' to 'number'
+
+
 
 Change ## -
 Name: 
@@ -251,7 +259,7 @@ Known bugs / enhancements / behavior questions:
 2.  when deleting a user, should it also delete all applications for that user?  
     --- check if one application exists, and block the delete from happening
     --- andy
-3.  is the amount supposed to default to $2500?  yes  andy
+3.  is the amount supposed to default to $2500?  yes  andy (status done)
 4.  make text to black  -- danny (status done!)
 5.  create user needs be removed  -- joyce
 6.  add a test for non numeric 
