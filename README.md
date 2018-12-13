@@ -265,6 +265,7 @@ Known bugs / enhancements / behavior questions:
 6.  add a test for non numeric 
     -- freedom to decide on focus lost, or on save whichever you can get done
     -- andy
+    -- changed input type to number, preventing entry of non-numeric values
 7.  add auth to the routes -- Arne
 
 
