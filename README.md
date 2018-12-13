@@ -246,9 +246,22 @@ Detail Changes:
 
 ===============================================
 Known bugs / enhancements / behavior questions:
-1.  should we move the create user button to nave bar?
-2.  when deleting a user, should it also delete all applications for that user?
-3.  i think we need to now add a content schema (we originally said no)
-    ---if we are going to allow file upload, it should attach it to something, so new content?
-4.  is the amount supposed to default to $2500?
+1.  should we move the create user button to nav bar?
+    --- joyce
+2.  when deleting a user, should it also delete all applications for that user?  
+    --- check if one application exists, and block the delete from happening
+    --- andy
+3.  is the amount supposed to default to $2500?  yes  andy
+4.  make text to black  -- danny (status done!)
+5.  create user needs be removed  -- joyce
+6.  add a test for non numeric 
+    -- freedom to decide on focus lost, or on save whichever you can get done
+    -- andy
+7.  add auth to the routes -- Arne
+
+
+Danny 917 817 7694
+Andy 414 484 8262
+Joyce 414 975 0451
+Arne ????
 
