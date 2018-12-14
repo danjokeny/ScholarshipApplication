@@ -259,6 +259,15 @@ Detail Changes:
 1. Added requireAuth to all routes on the server
 2. Added phone number to readme file
 
+Change 20 - Changed language and size of Applcation comment box
+Name: Andy Wittmann
+Date: 12/14/18
+Detail Changes:
+1. Changed comment box Placeholder from "Please add your full application here" to "Additional comments here"
+2. Reduced comment box size from 10 to 3 rows
+
+
+
 ===============================================
 Known bugs / enhancements / behavior questions:
 1.  should we move the create user button to nav bar?
@@ -269,7 +278,7 @@ Known bugs / enhancements / behavior questions:
 3.  is the amount supposed to default to $2500?  yes  andy (status done)
 4.  make text to black  -- danny (status done!)
 5.  create user needs be removed  -- joyce
-6.  add a test for non numeric 
+6.  add a test for non numeric (status done)
     -- freedom to decide on focus lost, or on save whichever you can get done
     -- andy
     -- changed input type to number, preventing entry of non-numeric values
