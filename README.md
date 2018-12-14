@@ -252,10 +252,12 @@ Date: 12/13/18
 Detail Changes:
 1.  added role to table users
 
-Change ## -
-Name: 
-Date: 
+Change 19 - Added authentication to routes
+Name: Arne Thomsen
+Date: 12/13/18
 Detail Changes:
+1. Added requireAuth to all routes on the server
+2. Added phone number to readme file
 
 ===============================================
 Known bugs / enhancements / behavior questions:
@@ -272,11 +274,11 @@ Known bugs / enhancements / behavior questions:
     -- andy
     -- changed input type to number, preventing entry of non-numeric values
     -- removed warnings for numbers
-7.  add auth to the routes -- Arne
+7.  add auth to the routes -- Arne (status done! 12/13/18)
 
 
 Danny 917 817 7694
 Andy 414 484 8262
 Joyce 414 975 0451
-Arne ????
+Arne 262 347 9068
 

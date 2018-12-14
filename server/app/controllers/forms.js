@@ -27,7 +27,7 @@ module.exports = function (app, config) {
     	"reviewComments"		: ""
 	
 }*/
-    router.post('/forms', asyncHandler(async (req, res) => {
+    router.post('/forms', requireAuth, asyncHandler(async (req, res) => {
         logger.log('info', 'POST Create new application form');
         var form = new Form(req.body);
         await form.save()
@@ -40,7 +40,7 @@ module.exports = function (app, config) {
     //get all forms 
     //NOTE: requestorId and reviewerID will display user records within form
     //Sample: http://localhost:3300/api/forms (GET)
-    router.get('/forms', asyncHandler(async (req, res) => {
+    router.get('/forms', requireAuth, asyncHandler(async (req, res) => {
         logger.log('info', 'Get all forms');
         let query = Form.find();
         query
@@ -73,7 +73,7 @@ module.exports = function (app, config) {
     "reviewerId": "5bf45a0581b9f87b78e63e68"
 }
     */
-    router.put('/forms', asyncHandler(async (req, res) => {
+    router.put('/forms', requireAuth, asyncHandler(async (req, res) => {
         logger.log('info', 'Updating form');
         await Form.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true })
             .then(result => {
@@ -100,7 +100,7 @@ module.exports = function (app, config) {
 
     var upload = multer({ storage: storage });
 
-    router.post('/forms/upload/:id', upload.any(), asyncHandler(async (req, res) => {
+    router.post('/forms/upload/:id', requireAuth, upload.any(), asyncHandler(async (req, res) => {
         logger.log('info', 'Uploading files');
         await Form.findById(req.params.id).then(result => {
             for (var i = 0, x = req.files.length; i < x; i++) {
@@ -119,7 +119,7 @@ module.exports = function (app, config) {
 
     //Delete forms
     //Sample: http://localhost:3300/api/forms/5c0fd3b69ba362562820fdec (DELETE)
-    router.delete('/forms/:id', asyncHandler(async (req, res) => {
+    router.delete('/forms/:id', requireAuth, asyncHandler(async (req, res) => {
         logger.log('info', 'Delete application form =>%s<', req.params.id);
 
         let query = Form.remove();
