@@ -4,9 +4,13 @@ var express = require('express'),
     multer = require('multer'),
     mkdirp = require('mkdirp'),
     asyncHandler = require('express-async-handler');
+    mongoose = require('mongoose'),
+    Form = mongoose.model('Form'),
+    passportService = require('../../config/passport'),
+    passport = require('passport');
 
-mongoose = require('mongoose'),
-    Form = mongoose.model('Form');
+var requireAuth = passport.authenticate('jwt', { session: false });
+
 //FormContent = mongoose.model('FormContent'),
 
 module.exports = function (app, config) {
@@ -32,7 +36,7 @@ module.exports = function (app, config) {
         var form = new Form(req.body);
         await form.save()
             .then(result => {
-                res.status(201).json({contentID: result._id});
+                res.status(201).json({ contentID: result._id });
             })
     }));
 
@@ -77,7 +81,7 @@ module.exports = function (app, config) {
         logger.log('info', 'Updating form');
         await Form.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true })
             .then(result => {
-                res.status(201).json({contentID: result._id});
+                res.status(201).json({ contentID: result._id });
             })
     }));
 
@@ -125,7 +129,7 @@ module.exports = function (app, config) {
         let query = Form.remove();
         query.where('_id').eq(req.params.id);
         await query.exec().then(result => {
-                res.status(200).json(result);
+            res.status(200).json(result);
         })
     }));
 
