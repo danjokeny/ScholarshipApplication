@@ -246,6 +246,11 @@ Detail Changes:
 2.  changed "input type" of amountRequested and schoolYear in editForm.html from 'email' to 'number'
 
 
+Change #18 -
+Name: Danny Forero
+Date: 12/13/18
+Detail Changes:
+1.  added role to table users
 
 Change ## -
 Name: 
