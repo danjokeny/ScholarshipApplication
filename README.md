@@ -266,24 +266,13 @@ Detail Changes:
 1. Changed comment box Placeholder from "Please add your full application here" to "Additional comments here"
 2. Reduced comment box size from 10 to 3 rows
 
+Change 21 - Remove Create User button and deploy
+1. Removed the Create User button
+2. Created Public folder on the server
+3. Copied Scripts folder from client to the Public folder
+4. Copiec index.html to the Public folder
 
 
-===============================================
-Known bugs / enhancements / behavior questions:
-1.  should we move the create user button to nav bar?
-    --- joyce
-2.  when deleting a user, should it also delete all applications for that user?  
-    --- check if one application exists, and block the delete from happening
-    --- andy
-3.  is the amount supposed to default to $2500?  yes  andy (status done)
-4.  make text to black  -- danny (status done!)
-5.  create user needs be removed  -- joyce
-6.  add a test for non numeric (status done)
-    -- freedom to decide on focus lost, or on save whichever you can get done
-    -- andy
-    -- changed input type to number, preventing entry of non-numeric values
-    -- removed warnings for numbers
-7.  add auth to the routes -- Arne (status done! 12/13/18)
 
 
 Danny 917 817 7694
