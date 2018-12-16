@@ -267,6 +267,9 @@ Detail Changes:
 2. Reduced comment box size from 10 to 3 rows
 
 Change 21 - Remove Create User button and deploy
+Name: Joyce Miller
+Date: 12/16/2018
+Detail Changes:
 1. Removed the Create User button
 2. Created Public folder on the server
 3. Copied Scripts folder from client to the Public folder
@@ -274,7 +277,7 @@ Change 21 - Remove Create User button and deploy
 
 
 
-
+Contact Info:
 Danny 917 817 7694
 Andy 414 484 8262
 Joyce 414 975 0451
