@@ -273,8 +273,13 @@ Detail Changes:
 1. Removed the Create User button
 2. Created Public folder on the server
 3. Copied Scripts folder from client to the Public folder
-4. Copiec index.html to the Public folder
+4. Copied index.html to the Public folder
 
+Change 22 - Copy images to server\public
+Name: Andy Wittmann
+Date: 12/17/2018
+Detail Changes:
+1. copied images folder to server\public
 
 
 Contact Info:
