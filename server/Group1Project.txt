@@ -1,0 +1,17 @@
+bus adm 810 web application development
+professor ross hightower
+
+Group 1 Project 
+Scholarship Application Website
+
+Group1 Members
+Joyce Miller
+Arne Thomsen
+Andrew Wittman
+Daniel Forero
+
+
+
+
+GitHub repository for group1
+https://github.com/danjokeny/ScholarshipApplication
